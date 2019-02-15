@@ -15,6 +15,7 @@ a {
 
 .profile-header {
     a {
+        @include content-style($style1...);
         font-size: 16px;
         margin-left: 10px;
         margin-right: 10px;
@@ -40,6 +41,7 @@ $breakpoint: 800px;
 }
 
 .profile-section {
+    @include content-style($style2...);
     background-color: $colour-highlight1;
     color: $colour-primary;
     margin: 16px;
@@ -54,6 +56,36 @@ $breakpoint: 800px;
         width: 100%;
     }
 }
+
+//mixins are another SASS feature -- a way of defining reusable stylesheet functions 
+@mixin transform($value) {
+    -webkit-transform: $value;
+    -moz-transform: $value;
+    -ms-transform: $value;
+    transform: $value;
+}
+
+.profile-logo {
+    font-size: 60px;
+    font-family: cursive;
+    @include transform ( rotate(25deg));
+}
+
+$style1: (foreground: $colour-light,
+background: $colour-secondary);
+
+$style2: (foreground: $colour-primary,
+background: $colour-highlight1);
+
+$style3: (foreground: $colour-primary,
+background: $colour-highlight2);
+
+@mixin content-style( $foreground, $background) {
+    color: $foreground;
+    background-color: $background;
+}
+
+
 
 
 
