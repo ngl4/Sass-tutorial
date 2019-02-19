@@ -1,5 +1,6 @@
 /* styles.scss */
 @import "_colours.scss";
+@import "angled-edges/_angled-edges.scss";
 
 body {
     font-family: sans-serif;
@@ -11,50 +12,6 @@ body {
 
 a {
     color: $colour-secondary;
-}
-
-.profile-header {
-    a {
-        @include content-style($style1...);
-        font-size: 16px;
-        margin-left: 10px;
-        margin-right: 10px;
-        padding: 10px;
-        border-radius: 5px;
-        color: $colour-light;
-        background-color: $colour-secondary;
-    }
-}
-
-$breakpoint: 800px;
-
-.profile-body {
-    display: flex;
-    align-items: stretch;
-    justify-content: space-around;
-    margin-top: 32px;
-    margin-left: 10vw;
-    margin-right: 10vw;
-    @media screen and (max-width: $breakpoint) {
-        flex-direction: column;
-    }
-}
-
-.profile-section {
-    @include content-style($style2...);
-    background-color: $colour-highlight1;
-    color: $colour-primary;
-    margin: 16px;
-    border-radius: 10px;
-    width: 340px;
-
-    .profile-content {
-        padding: 20px;
-    }
-
-    @media screen and (max-width: $breakpoint) {
-        width: 100%;
-    }
 }
 
 //mixins are another SASS feature -- a way of defining reusable stylesheet functions 
@@ -85,6 +42,71 @@ background: $colour-highlight2);
     background-color: $background;
 }
 
+.profile-header {
+    a {
+        @extend %link-shared;
+        @include content-style($style1...);
+        font-size: 16px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        color: $colour-light;
+        background-color: $colour-secondary;
+    }
+}
+
+a {
+    @extend %link-shared;
+    @include content-style($style3...);
+}
+
+$breakpoint: 800px;
+
+.profile-body {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    margin-top: 32px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    @media screen and (max-width: $breakpoint) {
+        flex-direction: column;
+    }
+}
+
+.profile-section {
+    @include angled-edge("outside bottom", "lower right", $colour-highlight1);
+    @include angled-edge("outside top", "upper right", $colour-highlight1);
+    @include content-style($style2...);
+    background-color: $colour-highlight1;
+    color: $colour-primary;
+    margin: 120px 16px 120px 16px;
+    border-radius: 10px;
+    width: 340px;
+
+    .profile-content {
+        padding: 20px;
+    }
+
+    @media screen and (max-width: $breakpoint) {
+        width: 100%;
+    }
+}
+
+
+
+
+//Inheritance is another powerful feature of SASS 
+//placeholder class--- %
+
+%link-shared {
+    font-size: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
 
 
 
