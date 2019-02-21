@@ -2,12 +2,9 @@
 body {
   font-family: sans-serif;
   text-align: center;
-  background: linear-gradient(155deg, #3f4f28 70%, #83a453 70%);
-  color: #fbfcf9;
+  background: linear-gradient(155deg, #231650 70%, #2374AB 70%);
+  color: #D6FFF6;
   min-height: 100vh; }
-
-a {
-  color: #83a453; }
 
 .profile-logo {
   font-size: 60px;
@@ -17,20 +14,20 @@ a {
   -ms-transform: rotate(25deg);
   transform: rotate(25deg); }
 
-.profile-header a {
-  color: #fbfcf9;
-  background-color: #83a453;
+.profile-header a, a {
   font-size: 16px;
   margin-left: 10px;
   margin-right: 10px;
   padding: 10px;
-  border-radius: 5px;
-  color: #fbfcf9;
-  background-color: #83a453; }
+  border-radius: 10px; }
+
+.profile-header a {
+  color: #D6FFF6;
+  background-color: #2374AB; }
 
 a {
-  color: #3f4f28;
-  background-color: #fbf9fc; }
+  color: #231650;
+  background-color: #FF8484; }
 
 .profile-body {
   display: flex;
@@ -46,15 +43,15 @@ a {
 .profile-section {
   position: relative;
   position: relative;
-  color: #3f4f28;
-  background-color: #b7a5d1;
-  background-color: #b7a5d1;
-  color: #3f4f28;
+  color: #231650;
+  background-color: #4DCCBD;
+  background-color: #4DCCBD;
+  color: #231650;
   margin: 120px 16px 120px 16px;
   border-radius: 10px;
   width: 340px; }
   .profile-section::after {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 100' fill='rgb(183,165,209)' fill-opacity='1'%3E%3Cpolygon points='0,0 100,0 0,100'%3E%3C/polygon%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 100' fill='rgb(77,204,189)' fill-opacity='1'%3E%3Cpolygon points='0,0 100,0 0,100'%3E%3C/polygon%3E%3C/svg%3E");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -67,7 +64,7 @@ a {
     z-index: 1;
     bottom: -100px; }
   .profile-section::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 100' fill='rgb(183,165,209)' fill-opacity='1'%3E%3Cpolygon points='0,100 100,100 0,0'%3E%3C/polygon%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 100' fill='rgb(77,204,189)' fill-opacity='1'%3E%3Cpolygon points='0,100 100,100 0,0'%3E%3C/polygon%3E%3C/svg%3E");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -84,12 +81,5 @@ a {
   @media screen and (max-width: 800px) {
     .profile-section {
       width: 100%; } }
-
-.profile-header a, a {
-  font-size: 16px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding: 10px;
-  border-radius: 10px; }
 
 /*# sourceMappingURL=styles.css.map */

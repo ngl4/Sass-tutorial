@@ -1,12 +1,21 @@
 //_colours.scss
+
+$colour-primary: hsl(253, 57%, 20%);
+$colour-secondary: #2374AB;
+$colour-light: #D6FFF6;
+$colour-highlight1: #4DCCBD;
+$colour-highlight2: #FF8484;
+
+
+//COLOR FEATURE --- YOU CAN CHOOSE RANDOM COLORS
 $red: random(255);
 $green: random(255);
 $blue: random(255);
-$colour-primary: rgb($red, $green, $blue);
-$colour-secondary: lighten($colour-primary, 25%);
-$colour-light:lighten($colour-primary, 75%);
-$colour-highlight1: lighten(complement($colour-primary), 50%);
-$colour-highlight2: lighten(complement($colour-secondary), 50%);
+// $colour-primary: rgb($red, $green, $blue);
+// $colour-secondary: lighten($colour-primary, 25%);
+// $colour-light:lighten($colour-primary, 75%);
+// $colour-highlight1: lighten(complement($colour-primary), 50%);
+// $colour-highlight2: lighten(complement($colour-secondary), 50%);
 
 
 

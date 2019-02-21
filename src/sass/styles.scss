@@ -2,6 +2,10 @@
 @import "_colours.scss";
 @import "angled-edges/_angled-edges.scss";
 
+
+//if you run 'sass --watch src/sass/:public/css/' in the command line
+//this will automatically be compiled into CSS in the 'public/css' folder
+
 body {
     font-family: sans-serif;
     text-align: center;
@@ -10,11 +14,12 @@ body {
     min-height: 100vh;
 }
 
-a {
-    color: $colour-secondary;
-}
 
-//mixins are another SASS feature -- a way of defining reusable stylesheet functions 
+//FEATURE #3: MIXINS
+//mixins are another SASS feature -- a way of defining reusable stylesheet functions
+//it is defined once, can take parameters, can be invoked anywhere in your SASS code
+//it can handle vendor prefixing such as '-webkit' prefix for Chrome and Safari 
+
 @mixin transform($value) {
     -webkit-transform: $value;
     -moz-transform: $value;
@@ -27,6 +32,15 @@ a {
     font-family: cursive;
     @include transform ( rotate(25deg));
 }
+
+//FEATURE #3.5: MIXINS AND VARIABLES
+//we can also use mixin with multiple parameters
+//handle styling of various parts of the page
+//you can create a mixin that defines foreground and background colour,
+//this will enable us to select appearances for different sections 
+//from a finite list of style variables
+//foreground means text color 
+//background means background color
 
 $style1: (foreground: $colour-light,
 background: $colour-secondary);
@@ -42,17 +56,36 @@ background: $colour-highlight2);
     background-color: $background;
 }
 
+//FEATURE #4: INHERITANCE
+//Inheritance is another powerful feature of SASS 
+//you will use this feature when you have two different styles for links in your page
+//if you want to use common styles across both, rather than copying and pasting CSS
+//you can just use the placeholder class--> " % "
+
+%link-shared {
+    font-size: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+//FEATURE #1: NESTING STYLES
+//specify a style for an element that is only applied 
+//if that element occurs within a parent element 
+
 .profile-header {
     a {
         @extend %link-shared;
         @include content-style($style1...);
-        font-size: 16px;
-        margin-left: 10px;
-        margin-right: 10px;
-        padding: 10px;
-        border-radius: 5px;
-        color: $colour-light;
-        background-color: $colour-secondary;
+        // font-size: 16px;   //* these are comment out because we have %link-shared and content-style
+        // margin-left: 10px;
+        // margin-right: 10px;
+        // padding: 10px;
+        // border-radius: 5px;
+        //color: $colour-light;
+        //background-color: $colour-secondary;
     }
 }
 
@@ -60,6 +93,11 @@ a {
     @extend %link-shared;
     @include content-style($style3...);
 }
+
+//FEATURE #2: RESPONSIVE GRID
+//using variables to specify breakpoint (see below)
+//Nest @media queries within other styles,
+//which makes behavior specific to screen size much more readable
 
 $breakpoint: 800px;
 
@@ -97,16 +135,6 @@ $breakpoint: 800px;
 
 
 
-//Inheritance is another powerful feature of SASS 
-//placeholder class--- %
-
-%link-shared {
-    font-size: 16px;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 10px;
-    border-radius: 10px;
-}
 
 
 
